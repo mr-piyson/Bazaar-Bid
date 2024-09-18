@@ -27,7 +27,7 @@ class singupModel {
 		$ccn = mysqli_connect("localhost","root","","bazaar")or die("connecton error");
 		mysqli_select_db($ccn,"bazaar")or die("selection error");
 			
-		$sql = "SELECT * FROM details WHERE Email= '$email'";
+		$sql = "SELECT * FROM user WHERE Email= '$email'";
 		$rs = mysqli_query($ccn,$sql) or die("query error");
 			
 
@@ -51,7 +51,7 @@ class singupModel {
 
 
 		if($sig==0){
-			$sqll = "INSERT INTO details (Email, FirstName, LastName, Mob, password) VALUES ('$email', '$fname', '$lname', '$mno', '$pass')";
+			$sqll = "INSERT INTO user (Email, FirstName, LastName, Mob, password) VALUES ('$email', '$fname', '$lname', '$mno', '$pass')";
 			$rs = mysqli_query($ccn,$sqll) or die("Insertion error");		
 			$homeUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
 			echo "<script type='text/javascript'>alert('Successfull Signup , Please Login To continue ');window.location.href = '$homeUrl';</script>";
@@ -67,7 +67,7 @@ class singupModel {
 	public function login($email, $pass) {
 		$this -> openDB();
 		
-		$stmt = $this -> conn -> prepare("SELECT * FROM details WHERE Email=? AND password=?");
+		$stmt = $this -> conn -> prepare("SELECT * FROM user WHERE Email=? AND password=?");
 
 		$stmt -> bind_param("ss", $email, $pass);
 		if ($stmt -> execute()) {

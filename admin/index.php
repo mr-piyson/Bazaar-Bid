@@ -108,10 +108,10 @@ if (isset($_POST['dltpr'])) {
 elseif (isset($_POST['dltuser'])) {
 	echo '<div style="width=49%; float:left;"><h2>User Table</h2>';
 	$id=$_REQUEST['uid'];
-	$getmax = "DELETE FROM details WHERE uid=$id";
+	$getmax = "DELETE FROM user WHERE uid=$id";
 	$result = $conn -> query($getmax);
 	
-	$getmax = "SELECT uid,Email,password FROM details ORDER BY uid";
+	$getmax = "SELECT uid,Email,password FROM user ORDER BY uid";
 	$result = $conn -> query($getmax);
 	if ($result -> num_rows > 0) {
 	echo '
@@ -205,7 +205,7 @@ else {
 	//------------------user----------------------------
 	
 	echo '<div style="width:49%; float:left;"><h2>User Table</h2>';
-	$getmax = "SELECT uid,Email,password FROM details ORDER BY uid";
+	$getmax = "SELECT uid,Email,password FROM user ORDER BY uid";
 	$result = $conn -> query($getmax);
 
 	if ($result -> num_rows > 0) {

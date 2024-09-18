@@ -105,10 +105,10 @@ INSERT INTO `bid` (`id`, `Name`, `Price`, `pid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `details`
+-- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `details` (
+CREATE TABLE IF NOT EXISTS `user` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
   `Email` text NOT NULL,
   `FirstName` text NOT NULL,
@@ -119,10 +119,10 @@ CREATE TABLE IF NOT EXISTS `details` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `details`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `details` (`uid`, `Email`, `FirstName`, `LastName`, `Mob`, `password`) VALUES
+INSERT INTO `user` (`uid`, `Email`, `FirstName`, `LastName`, `Mob`, `password`) VALUES
 (2, 'ujjawalpvce', 'ujjawal', 'kumar', '8389972892', '45322'),
 (4, 'vinitraj11', 'Vinit', 'Kumar', '9509042871', '123456'),
 (10, 'wewe', 'qwq', 'wqw', 'sa', '123'),
